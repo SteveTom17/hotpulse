@@ -1,0 +1,29 @@
+# 复制为 .dev.vars 供本地开发使用（Vite 插件自动加载；.dev.vars 已被 .gitignore 忽略）。
+# 生产环境：非敏感项放入 wrangler.jsonc 的 vars，敏感项用 `wrangler secret put` 设置。
+
+# ── 认证 ──────────────────────────────────────────────
+# 本地开发默认使用演示用户；置为 true 时校验 Cloudflare Access JWT（需同时配置下面两项）。
+# CF_ACCESS_JWT_VERIFY=false
+# CF_ACCESS_AUD=your-access-audience-tag
+# CF_ACCESS_CERTS_URL=https://your-team.cloudflareaccess.com/cdn-cgi/access/certs
+# 演示用户，格式：userId|email|name
+# AUTH_DEMO_USER=demo|demo@example.com|演示用户
+
+# ── 正式模型（DeepSeek，OpenAI 兼容）──────────────────
+# DEEPSEEK_API_KEY=sk-xxxxxxxxxxxxxxxx
+# DEEPSEEK_BASE_URL=https://api.deepseek.com
+# DEEPSEEK_MODEL=deepseek-chat
+# 内容生成引擎："model" 使用正式模型；"demo" 使用内置演示引擎（结果必须显著标注，仅测试用）
+# GENERATION_ENGINE=model
+
+# ── 凭据与权限 ────────────────────────────────────────
+# 连接器凭据加密密钥（32 字节 hex，可用 `openssl rand -hex 32` 生成；生产必填）
+# CONNECTOR_SECRET_KEY=0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+# 人工开通/管理端点密钥
+# ADMIN_API_KEY=your-admin-api-key
+# 全局管理员用户 ID（逗号分隔，可开通计费）
+# ADMIN_USER_IDS=
+# 申诉与投诉联系邮箱（帮助与工单页展示）
+# SUPPORT_EMAIL=support@example.com
+# 用户协议版本号（与 app/terms、app/privacy 内容一致时更新）
+# LEGAL_VERSION=2026-08-09-v1

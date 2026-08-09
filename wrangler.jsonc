@@ -1,0 +1,51 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // HotPulse 生产部署配置。
+  // 构建产物由 vite build 生成于 dist/（main 与 assets 均指向 dist）。
+  // 部署前必须替换：d1_databases[0].database_id（真实 D1 数据库 ID）
+  // 以及下方带 REPLACE_WITH_ 前缀的 vars。
+  "name": "hotpulse",
+  "main": "./dist/server/index.js",
+  "compatibility_date": "2026-05-15",
+  "compatibility_flags": ["nodejs_compat"],
+  "no_bundle": true,
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "hotpulse-d1",
+      // 用 `wrangler d1 create hotpulse-d1` 创建后替换为真实 ID
+      "database_id": "REPLACE_WITH_REAL_D1_DATABASE_ID"
+    }
+  ],
+  // Cron：每 30 分钟同步一次已启用的 HTTP API 连接器（FR-02）。
+  // 免费版 Workers 仅支持每小时触发；付费计划可每 30 分钟。
+  "triggers": {
+    "crons": ["*/30 * * * *"]
+  },
+  "vars": {
+    // 认证：置 "true" 后强制校验 Cloudflare Access JWT（生产必须）。
+    // 配置 Cloudflare Access 应用后替换 AUD 与证书地址。
+    "CF_ACCESS_JWT_VERIFY": "true",
+    "CF_ACCESS_AUD": "REPLACE_WITH_CF_ACCESS_AUD",
+    "CF_ACCESS_CERTS_URL": "https://REPLACE_WITH_TEAM.cloudflareaccess.com/cdn-cgi/access/certs",
+    // 全局管理员（可人工开通计费），替换为 Access 用户 ID
+    "ADMIN_USER_IDS": "REPLACE_WITH_ADMIN_CF_USER_ID",
+    // 申诉与投诉联系邮箱（帮助与工单页展示）
+    "SUPPORT_EMAIL": "REPLACE_WITH_SUPPORT_EMAIL",
+    // 内容生成引擎："model" 使用 DeepSeek；"demo" 使用内置演示引擎（仅测试）
+    "GENERATION_ENGINE": "model",
+    // 用户协议版本（与 app/terms 内容一致时更新）
+    "LEGAL_VERSION": "2026-08-09-v1"
+  },
+  // 敏感变量必须用 `wrangler secret put` 设置（勿写入本文件）：
+  //   DEEPSEEK_API_KEY   正式模型密钥
+  //   CONNECTOR_SECRET_KEY  连接器凭据加密密钥（32 字节 hex；生产必填）
+  //   ADMIN_API_KEY      人工开通/管理端点密钥
+  "observability": {
+    "enabled": true
+  }
+}
