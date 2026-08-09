@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="520" viewBox="0 0 1240 520" font-family="system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <rect width="1240" height="520" fill="#f8fafc"/>
+  <text x="620" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#0f172a">HotPulse — Content Production Pipeline</text>
+  <text x="620" y="68" text-anchor="middle" font-size="14" fill="#64748b">source-attributed · risk-gated · fact-checked · human-approved · audit-trailed</text>
+
+  <defs>
+    <marker id="wfArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#475569"/>
+    </marker>
+    <marker id="wfArrowRed" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <!-- stage 1: ingestion -->
+  <rect x="44" y="150" width="118" height="84" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="103" y="178" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">1. Ingestion</text>
+  <text x="103" y="198" text-anchor="middle" font-size="10.5" fill="#64748b">HTTP API connectors</text>
+  <text x="103" y="214" text-anchor="middle" font-size="10.5" fill="#64748b">CSV import · cron sync</text>
+
+  <!-- stage 2: normalize -->
+  <rect x="192" y="150" width="118" height="84" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="251" y="178" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">2. Normalize</text>
+  <text x="251" y="198" text-anchor="middle" font-size="10.5" fill="#64748b">24h semantic dedup</text>
+  <text x="251" y="214" text-anchor="middle" font-size="10.5" fill="#64748b">cross-source merge</text>
+
+  <!-- stage 3: scoring -->
+  <rect x="340" y="150" width="118" height="84" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="399" y="178" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">3. Scoring</text>
+  <text x="399" y="198" text-anchor="middle" font-size="10.5" fill="#475569">growth × cross-source</text>
+  <text x="399" y="214" text-anchor="middle" font-size="10.5" fill="#475569">× industry relevance</text>
+
+  <!-- stage 4: risk -->
+  <rect x="488" y="150" width="118" height="84" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="547" y="178" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">4. Risk Grade</text>
+  <text x="547" y="198" text-anchor="middle" font-size="10.5" fill="#92400e">low · med · high</text>
+  <text x="547" y="214" text-anchor="middle" font-size="10.5" fill="#92400e">blocked (auto)</text>
+
+  <!-- stage 5: draft -->
+  <rect x="636" y="150" width="118" height="84" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="695" y="178" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">5. AI Draft</text>
+  <text x="695" y="198" text-anchor="middle" font-size="10.5" fill="#475569">brand facts only</text>
+  <text x="695" y="214" text-anchor="middle" font-size="10.5" fill="#475569">AI label · credits</text>
+
+  <!-- stage 6: approval -->
+  <rect x="784" y="150" width="118" height="84" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="843" y="178" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">6. Approval</text>
+  <text x="843" y="198" text-anchor="middle" font-size="10.5" fill="#475569">source · facts · AI label</text>
+  <text x="843" y="214" text-anchor="middle" font-size="10.5" fill="#475569">3-step, by humans</text>
+
+  <!-- stage 7: export -->
+  <rect x="932" y="150" width="118" height="84" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+  <text x="991" y="178" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">7. Export</text>
+  <text x="991" y="198" text-anchor="middle" font-size="10.5" fill="#065f46">compliance bundle</text>
+  <text x="991" y="214" text-anchor="middle" font-size="10.5" fill="#065f46">manifest + version</text>
+
+  <!-- stage 8: publish -->
+  <rect x="1080" y="150" width="118" height="84" rx="10" fill="#e2e8f0" stroke="#475569" stroke-width="1.5"/>
+  <text x="1139" y="178" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">8. Publish</text>
+  <text x="1139" y="198" text-anchor="middle" font-size="10.5" fill="#475569">manual only</text>
+  <text x="1139" y="214" text-anchor="middle" font-size="10.5" fill="#475569">never auto-posted</text>
+
+  <!-- flow arrows -->
+  <line x1="166" y1="192" x2="184" y2="192" stroke="#475569" stroke-width="2" marker-end="url(#wfArrow)"/>
+  <line x1="314" y1="192" x2="332" y2="192" stroke="#475569" stroke-width="2" marker-end="url(#wfArrow)"/>
+  <line x1="462" y1="192" x2="480" y2="192" stroke="#475569" stroke-width="2" marker-end="url(#wfArrow)"/>
+  <line x1="610" y1="192" x2="628" y2="192" stroke="#475569" stroke-width="2" marker-end="url(#wfArrow)"/>
+  <line x1="758" y1="192" x2="776" y2="192" stroke="#475569" stroke-width="2" marker-end="url(#wfArrow)"/>
+  <line x1="906" y1="192" x2="924" y2="192" stroke="#475569" stroke-width="2" marker-end="url(#wfArrow)"/>
+  <line x1="1054" y1="192" x2="1072" y2="192" stroke="#475569" stroke-width="2" marker-end="url(#wfArrow)"/>
+
+  <!-- blocked branch -->
+  <path d="M547,238 L547,268 L610,268" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#wfArrowRed)"/>
+  <rect x="430" y="276" width="240" height="64" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="550" y="302" text-anchor="middle" font-size="13" font-weight="700" fill="#991b1b">Blocked: high-risk topics</text>
+  <text x="550" y="322" text-anchor="middle" font-size="10.5" fill="#b91c1c">generation refused · audit logged</text>
+  <text x="550" y="336" text-anchor="middle" font-size="10.5" fill="#b91c1c">human review only</text>
+
+  <!-- bottom note -->
+  <rect x="44" y="380" width="1154" height="40" rx="10" fill="#eef2ff" stroke="#a5b4fc" stroke-width="1"/>
+  <text x="620" y="405" text-anchor="middle" font-size="12.5" fill="#3730a3">AI drafts never auto-publish: exports carry source list, fact list, AI labels, version history — and every step is written to the audit trail.</text>
+
+  <!-- legend -->
+  <g font-size="12" fill="#475569">
+    <rect x="60" y="450" width="16" height="14" rx="3" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="84" y="462">input / transform</text>
+    <rect x="260" y="450" width="16" height="14" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="284" y="462">system logic</text>
+    <rect x="440" y="450" width="16" height="14" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+    <text x="464" y="462">risk gate</text>
+    <rect x="590" y="450" width="16" height="14" rx="3" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+    <text x="614" y="462">blocked</text>
+    <rect x="720" y="450" width="16" height="14" rx="3" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+    <text x="744" y="462">compliant export</text>
+    <rect x="910" y="450" width="16" height="14" rx="3" fill="#e2e8f0" stroke="#475569" stroke-width="1.5"/>
+    <text x="934" y="462">human action</text>
+  </g>
+</svg>

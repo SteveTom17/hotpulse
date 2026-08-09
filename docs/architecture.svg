@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="860" viewBox="0 0 1240 860" font-family="system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <rect width="1240" height="860" fill="#f8fafc"/>
+  <text x="620" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#0f172a">HotPulse — System Architecture</text>
+  <text x="620" y="68" text-anchor="middle" font-size="14" fill="#64748b">Cloudflare Workers + D1 · React 19 · Vinext (Vite 8) · MIT</text>
+
+  <!-- column containers -->
+  <rect x="40" y="90" width="260" height="700" rx="12" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="170" y="120" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">CLIENTS</text>
+
+  <rect x="320" y="90" width="600" height="700" rx="12" fill="#eef2ff" stroke="#a5b4fc" stroke-width="1.5"/>
+  <text x="620" y="120" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">CLOUDFLARE WORKER (single worker, multi-tenant)</text>
+
+  <rect x="940" y="90" width="260" height="700" rx="12" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="1070" y="120" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">DATA &amp; EXTERNAL</text>
+
+  <!-- clients boxes -->
+  <rect x="60" y="170" width="220" height="64" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="170" y="195" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">Browser SPA</text>
+  <text x="170" y="216" text-anchor="middle" font-size="11" fill="#64748b">React 19 · Tailwind CSS 4</text>
+
+  <rect x="60" y="264" width="220" height="64" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="170" y="289" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">Cloudflare Access</text>
+  <text x="170" y="310" text-anchor="middle" font-size="11" fill="#64748b">JWT auth (production)</text>
+
+  <rect x="60" y="358" width="220" height="64" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="170" y="383" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">Cron Trigger</text>
+  <text x="170" y="404" text-anchor="middle" font-size="11" fill="#64748b">every 30 min</text>
+
+  <!-- worker boxes -->
+  <rect x="340" y="170" width="560" height="80" rx="8" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="620" y="196" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">API Routes (22)</text>
+  <text x="620" y="218" text-anchor="middle" font-size="11" fill="#dbeafe">/api/session · /api/workspaces/[id]/trends · /packages · /connectors · /generate · /audit · /billing</text>
+  <text x="620" y="238" text-anchor="middle" font-size="11" fill="#dbeafe">role-gated via view / edit / approve / export / view_audit / manage_* permissions</text>
+
+  <g font-size="12">
+    <rect x="340" y="280" width="270" height="64" rx="8" fill="#ffffff" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="475" y="304" text-anchor="middle" font-weight="600" fill="#0f172a">Auth &amp; RBAC</text>
+    <text x="475" y="324" text-anchor="middle" font-size="10.5" fill="#64748b">demo fallback · workspace membership</text>
+
+    <rect x="630" y="280" width="270" height="64" rx="8" fill="#ffffff" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="765" y="304" text-anchor="middle" font-weight="600" fill="#0f172a">Risk Engine</text>
+    <text x="765" y="324" text-anchor="middle" font-size="10.5" fill="#64748b">rule-first · low / med / high / blocked</text>
+
+    <rect x="340" y="374" width="270" height="64" rx="8" fill="#ffffff" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="475" y="398" text-anchor="middle" font-weight="600" fill="#0f172a">Model Gateway</text>
+    <text x="475" y="418" text-anchor="middle" font-size="10.5" fill="#64748b">DeepSeek · demo engine fallback</text>
+
+    <rect x="630" y="374" width="270" height="64" rx="8" fill="#ffffff" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="765" y="398" text-anchor="middle" font-weight="600" fill="#0f172a">Billing</text>
+    <text x="765" y="418" text-anchor="middle" font-size="10.5" fill="#64748b">credits · quota · invoices</text>
+
+    <rect x="340" y="468" width="270" height="64" rx="8" fill="#ffffff" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="475" y="492" text-anchor="middle" font-weight="600" fill="#0f172a">Connector Sync</text>
+    <text x="475" y="512" text-anchor="middle" font-size="10.5" fill="#64748b">backoff · rate-limit pause</text>
+
+    <rect x="630" y="468" width="270" height="64" rx="8" fill="#ffffff" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="765" y="492" text-anchor="middle" font-weight="600" fill="#0f172a">Audit Log</text>
+    <text x="765" y="512" text-anchor="middle" font-size="10.5" fill="#64748b">write-only trail · retained on delete</text>
+
+    <rect x="340" y="562" width="270" height="64" rx="8" fill="#ffffff" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="475" y="586" text-anchor="middle" font-weight="600" fill="#0f172a">Legal &amp; Consents</text>
+    <text x="475" y="606" text-anchor="middle" font-size="10.5" fill="#64748b">versioned terms · data deletion</text>
+
+    <rect x="630" y="562" width="270" height="64" rx="8" fill="#ffffff" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="765" y="586" text-anchor="middle" font-weight="600" fill="#0f172a">Export</text>
+    <text x="765" y="606" text-anchor="middle" font-size="10.5" fill="#64748b">compliance bundle · AI labels</text>
+  </g>
+
+  <rect x="340" y="656" width="560" height="40" rx="8" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1"/>
+  <text x="620" y="681" text-anchor="middle" font-size="12" fill="#3730a3">All business logic runs server-side; the browser holds no authoritative state.</text>
+
+  <!-- data boxes -->
+  <rect x="960" y="170" width="220" height="80" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+  <text x="1070" y="200" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">Cloudflare D1</text>
+  <text x="1070" y="222" text-anchor="middle" font-size="11" fill="#64748b">15 tables · Drizzle ORM</text>
+  <text x="1070" y="238" text-anchor="middle" font-size="10.5" fill="#059669">workspaces · trends · packages · audit …</text>
+
+  <rect x="960" y="280" width="220" height="64" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="1070" y="305" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">DeepSeek API</text>
+  <text x="1070" y="326" text-anchor="middle" font-size="11" fill="#64748b">OpenAI-compatible</text>
+
+  <rect x="960" y="374" width="220" height="64" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="1070" y="399" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">Authorized Sources</text>
+  <text x="1070" y="420" text-anchor="middle" font-size="11" fill="#64748b">HTTP API connectors</text>
+
+  <rect x="960" y="468" width="220" height="64" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="1070" y="493" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">CSV Import</text>
+  <text x="1070" y="514" text-anchor="middle" font-size="11" fill="#64748b">customer-provided</text>
+
+  <rect x="960" y="562" width="220" height="64" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="1070" y="587" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">Secrets</text>
+  <text x="1070" y="608" text-anchor="middle" font-size="11" fill="#64748b">AES-256-GCM encrypted</text>
+
+  <!-- arrows -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#475569"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowDash" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#9333ea"/>
+    </marker>
+  </defs>
+
+  <line x1="300" y1="202" x2="332" y2="202" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="920" y1="202" x2="952" y2="202" stroke="#2563eb" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <line x1="920" y1="312" x2="952" y2="312" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="920" y1="406" x2="952" y2="406" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M300,390 L310,390 L310,500 L332,500" fill="none" stroke="#9333ea" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrowDash)"/>
+
+  <!-- legend -->
+  <g font-size="12" fill="#475569">
+    <line x1="60" y1="826" x2="100" y2="826" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="110" y="830">request / data flow</text>
+    <line x1="320" y1="826" x2="360" y2="826" stroke="#9333ea" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrowDash)"/>
+    <text x="370" y="830">scheduled trigger</text>
+    <rect x="560" y="818" width="14" height="14" rx="3" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <text x="582" y="830">authoritative persistence</text>
+    <rect x="780" y="818" width="14" height="14" rx="3" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1"/>
+    <text x="802" y="830">server-side logic</text>
+  </g>
+</svg>

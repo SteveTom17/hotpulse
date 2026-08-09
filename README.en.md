@@ -40,6 +40,20 @@ wrangler.jsonc          Production deploy config (Worker + D1 + Cron + vars)
 vite.config.ts          Local dev config (Vite 8 + Cloudflare plugin)
 ```
 
+## Architecture
+
+![System Architecture](./docs/architecture.svg)
+
+![Content Production Pipeline](./docs/workflow.svg)
+
+Key points:
+
+- **Single worker, multi-tenant**: all business logic (auth / risk / generation / billing / audit) runs server-side; the browser holds no authoritative state;
+- **D1 is the source of truth**: 15 tables managed by Drizzle ORM; migrations live in `drizzle/`;
+- **Cron sync**: connector sync runs every 30 minutes with exponential backoff and rate-limit pause;
+- **Encrypted credentials**: connector keys/tokens are encrypted with AES-256-GCM; keys are injected via `wrangler secret`;
+- **Compliance loop**: generate → approve → export is fully audited; exports carry source list, fact list, AI labels, and version history.
+
 ## Local Development (5 minutes)
 
 Prerequisites: Node.js `>=22.13.0` (PowerShell on Windows, bash on macOS/Linux).

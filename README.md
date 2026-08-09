@@ -40,6 +40,20 @@ wrangler.jsonc          生产部署配置（Worker + D1 + Cron + vars）
 vite.config.ts          本地开发配置（Vite 8 + Cloudflare 插件）
 ```
 
+## 系统架构
+
+![系统架构图](./docs/architecture.svg)
+
+![内容生产流水线](./docs/workflow.svg)
+
+架构要点：
+
+- **单一 Worker，多租户**：认证、风险分级、生成、计费、审计等全部业务逻辑在服务端执行，浏览器不持有权威状态；
+- **数据权威在 D1**：15 张表由 Drizzle ORM 管理，迁移文件在 `drizzle/`；
+- **Cron 定时同步**：每 30 分钟运行连接器同步，失败指数退避、限流暂停；
+- **凭据加密**：连接器密钥与令牌用 AES-256-GCM 加密保存，密钥通过 `wrangler secret` 注入；
+- **合规闭环**：生成 → 审批 → 导出全程审计留痕，导出包包含来源清单、事实清单、AI 标识与版本历史。
+
 ## 本地运行（5 分钟）
 
 前置条件：Node.js `>=22.13.0`（Windows 使用 PowerShell，macOS/Linux 使用 bash）。
