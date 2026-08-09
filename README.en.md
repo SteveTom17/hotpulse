@@ -2,6 +2,12 @@
 
 [简体中文](./README.md) | **English** | [日本語](./README.ja.md)
 
+## 📺 Demo Video
+
+> 🎬 **Demo video coming soon** — once recorded, this section will link directly to the video platform (Bilibili / YouTube) with a ~3-minute full workflow walkthrough.
+>
+> 💡 Can't wait? Clone the repo and run it locally in 5 minutes — no accounts or API keys required (see “Local Development”).
+
 HotPulse is a hot-trend content operations platform for local brands: it turns “spot a trend → decide whether it’s worth following → draft content → human review → compliant export” into a single workflow, putting source attribution, brand facts, AI labels, and approval records ahead of conversion rate.
 
 It is **not** an auto-posting tool: every content draft is AI-generated, clearly labeled, and must pass human approval before it can be published. See [AGENTS.md](./AGENTS.md) for the behavioral charter and [requirements.md](./requirements.md) for full requirements and acceptance criteria.
@@ -63,7 +69,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000. The default setup uses a demo user + demo engine — **no API keys or accounts required**:
+Open http://localhost:3000 (a local-only address on your own machine). The default setup uses a demo user + demo engine — **no API keys or accounts required**:
 
 - Accept the user terms & privacy policy on first visit (minimal built-in texts)
 - Create a brand workspace → add connectors (HTTP API / CSV import) → generate drafts → approve → export
